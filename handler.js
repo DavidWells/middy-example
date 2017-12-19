@@ -9,7 +9,7 @@ const inputSchema = {
   properties: {
     body: {
       type: 'object',
-      required: ['name'],
+      required: ['name'], // if name not supplied error thrown
       properties: {
         name: { type: 'string' },
       }
