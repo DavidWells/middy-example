@@ -25,6 +25,8 @@ serverless deploy
 ## API Docs
 
 <!-- AUTO-GENERATED-CONTENT:START (GENERATE_API_DOCS:path=../handler.js) -->
+### Input Schema
+```js
 {
   "type": "object",
   "properties": {
@@ -41,4 +43,5 @@ serverless deploy
     }
   }
 }
+```
 <!-- AUTO-GENERATED-CONTENT:END -->

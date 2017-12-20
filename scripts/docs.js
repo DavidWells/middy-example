@@ -16,7 +16,12 @@ const config = {
         return content
       }
 
-      const docs = `${JSON.stringify(inputSchema, null, 2)}`
+      const docs = `
+### Input Schema
+\`\`\`js
+${JSON.stringify(inputSchema, null, 2)}
+\`\`\`
+`
 
       return docs.replace(/^\s+|\s+$/g, '').replace(/\[33m/g, '').replace(/\[[0-9]{2}m/g, '')
     }
