@@ -1,5 +1,6 @@
 const path = require('path')
 const markdownMagic = require('markdown-magic') // eslint-disable-line
+const jsf = require('json-schema-faker');
 // const dox = require('dox')
 
 const config = {
@@ -16,10 +17,18 @@ const config = {
         return content
       }
 
+      const example = jsf(inputSchema)
+      console.log('example', example)
+
       const docs = `
 ### Input Schema
 \`\`\`js
 ${JSON.stringify(inputSchema, null, 2)}
+\`\`\`
+
+### Input Example
+\`\`\`js
+${JSON.stringify(example, null, 2)}
 \`\`\`
 `
 

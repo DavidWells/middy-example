@@ -14,6 +14,7 @@
     "middy": "^0.4.1"
   },
   "devDependencies": {
+    "json-schema-faker": "^0.4.3",
     "markdown-magic": "^0.1.19"
   }
 }

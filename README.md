@@ -6,6 +6,7 @@ Example of serverless framework + [middy](https://github.com/middyjs/middy)
 - [Install](#install)
 - [API Docs](#api-docs)
   * [Input Schema](#input-schema)
+  * [Input Example](#input-example)
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Install
@@ -47,6 +48,15 @@ serverless deploy
         }
       }
     }
+  }
+}
+```
+
+### Input Example
+```js
+{
+  "body": {
+    "name": "ad mollit officia"
   }
 }
 ```
