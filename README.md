@@ -2,6 +2,12 @@
 
 Example of serverless framework + [middy](https://github.com/middyjs/middy)
 
+<!-- AUTO-GENERATED-CONTENT:START (TOC) -->
+- [Install](#install)
+- [API Docs](#api-docs)
+  * [Input Schema](#input-schema)
+<!-- AUTO-GENERATED-CONTENT:END -->
+
 ## Install
 
 Make sure serverless is installed
