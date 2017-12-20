@@ -56,7 +56,7 @@ serverless deploy
 ```js
 {
   "body": {
-    "name": "ad mollit officia"
+    "name": "Excepteur"
   }
 }
 ```

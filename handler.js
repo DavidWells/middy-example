@@ -1,8 +1,10 @@
 const middy = require('middy')
-const middlewares = require('middy/middlewares')
-const jsonBodyParser = middlewares.jsonBodyParser
-const validator = middlewares.validator
-const httpErrorHandler = middlewares.httpErrorHandler
+const {
+  jsonBodyParser,
+  validator,
+  httpErrorHandler
+} = require('middy/middlewares')
+
 
 const inputSchema = {
   type: 'object',
