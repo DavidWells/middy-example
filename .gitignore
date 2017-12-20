@@ -4,4 +4,4 @@ jspm_packages
 
 # Serverless directories
 .serverless
-lol.js
+schema-tester.js

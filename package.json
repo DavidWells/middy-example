@@ -4,11 +4,16 @@
   "description": "",
   "main": "handler.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "sls deploy function -f helloWorld",
+    "logs": "sls logs -f helloWorld -t",
+    "docs": "node ./scripts/docs.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "middy": "^0.4.1"
+  },
+  "devDependencies": {
+    "markdown-magic": "^0.1.19"
   }
 }

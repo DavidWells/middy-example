@@ -44,4 +44,5 @@ const handler = middy(businessLogic)
 
 
 module.exports.middyFunction = handler
-
+// Export schema for docs
+module.exports.inputSchema = inputSchema
