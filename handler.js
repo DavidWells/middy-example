@@ -1,11 +1,7 @@
 const middy = require('middy')
-const {
-  jsonBodyParser,
-  validator,
-  httpErrorHandler
-} = require('middy/middlewares')
+const { jsonBodyParser, validator, httpErrorHandler } = require('middy/middlewares')
 
-
+/* Input schema for lambda function */
 const inputSchema = {
   type: 'object',
   properties: {
@@ -19,7 +15,7 @@ const inputSchema = {
   }
 }
 
-// Normal lambda code
+/* Normal lambda code */
 const businessLogic = (event, context, callback) => {
   // event.body has already been turned into an object by `jsonBodyParser` middleware
   const { name } = event.body
@@ -33,7 +29,7 @@ const businessLogic = (event, context, callback) => {
   })
 }
 
-// Attach middlewares
+/* Attach middlewares */
 const handler = middy(businessLogic)
   // parses the request body when it's a JSON and converts it to an object
   .use(jsonBodyParser())
@@ -42,7 +38,8 @@ const handler = middy(businessLogic)
   // handles common http errors and returns proper responses
   .use(httpErrorHandler())
 
-// Export handler for serverless to use
+/* Export handler for serverless to use */
 module.exports.middyFunction = handler
-// Export inputSchema for automatic documentation
+
+/* Export inputSchema for automatic documentation */
 module.exports.inputSchema = inputSchema
