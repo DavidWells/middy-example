@@ -7,25 +7,27 @@ Example of serverless framework + [middy](https://github.com/middyjs/middy)
 - [API Docs](#api-docs)
   * [Input Schema](#input-schema)
   * [Input Example](#input-example)
+  * [Output Schema](#output-schema)
+  * [Output Example](#output-example)
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Install
 
 Make sure serverless is installed
 
-```
+```bash
 npm i serverless -g
 ```
 
 Then install project dependancies
 
-```
-npm i
+```bash
+npm install
 ```
 
 Then deploy
 
-```
+```bash
 serverless deploy
 ```
 
@@ -33,7 +35,8 @@ serverless deploy
 
 <!-- AUTO-GENERATED-CONTENT:START (GENERATE_API_DOCS:path=../handler.js) -->
 ### Input Schema
-```js
+
+```json
 {
   "type": "object",
   "properties": {
@@ -48,15 +51,58 @@ serverless deploy
         }
       }
     }
-  }
+  },
+  "required": [
+    "body"
+  ]
 }
 ```
 
 ### Input Example
-```js
+
+```json
 {
   "body": {
-    "name": "Excepteur"
+    "name": "in exercitation cillum occaecat"
+  }
+}
+```
+
+### Output Schema
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "body": {
+      "type": "object",
+      "required": [
+        "result",
+        "message"
+      ],
+      "properties": {
+        "result": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required": [
+    "body"
+  ]
+}
+```
+
+### Output Example
+
+```json
+{
+  "body": {
+    "result": "ipsum consectetur anim dolore",
+    "message": "sit tempor"
   }
 }
 ```

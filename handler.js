@@ -1,19 +1,6 @@
 const middy = require('middy')
 const { jsonBodyParser, validator, httpErrorHandler } = require('middy/middlewares')
 
-/* Input schema for lambda function */
-const inputSchema = {
-  type: 'object',
-  properties: {
-    body: {
-      type: 'object',
-      required: ['name'],
-      properties: {
-        name: { type: 'string' },
-      }
-    }
-  }
-}
 
 /* Normal lambda code */
 const businessLogic = (event, context, callback) => {
@@ -29,17 +16,48 @@ const businessLogic = (event, context, callback) => {
   })
 }
 
+/* Input & Output Schema */
+const schema = {
+  input: {
+    type: 'object',
+    properties: {
+      body: {
+        type: 'object',
+        required: ['name'],
+        properties: {
+          name: { type: 'string' },
+        }
+      }
+    },
+    required: ['body']
+  },
+  output: {
+    type: 'object',
+    properties: {
+      body: {
+        type: 'object',
+        required: ['result', 'message'],
+        properties: {
+          result: { type: 'string' },
+          message: { type: 'string' },
+        }
+      }
+    },
+    required: ['body']
+  }
+}
+
 /* Attach middlewares */
 const handler = middy(businessLogic)
   // parses the request body when it's a JSON and converts it to an object
   .use(jsonBodyParser())
   // validates the input
-  .use(validator({ inputSchema: inputSchema }))
+  .use(validator({ inputSchema: schema.input, outputSchema: schema.output }))
   // handles common http errors and returns proper responses
   .use(httpErrorHandler())
 
 /* Export handler for serverless to use */
 module.exports.middyFunction = handler
 
-/* Export inputSchema for automatic documentation */
-module.exports.inputSchema = inputSchema
+/* Export inputSchema & outputSchema for automatic documentation */
+module.exports.schema = schema
