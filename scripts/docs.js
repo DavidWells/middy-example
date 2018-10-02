@@ -41,7 +41,8 @@ function toTitleCase(str) {
 }
 
 function renderSchema(schema, type) {
-  return `### ${toTitleCase(type)} Schema
+  const typeName = (type === 'output') ? 'Response' : type
+  return `### ${toTitleCase(typeName)} Schema
 
 \`\`\`json
 ${JSON.stringify(schema, null, 2)}
@@ -60,7 +61,9 @@ function renderSchemaExample(schema, type) {
     example = example.body
   }
 
-  return `### ${toTitleCase(type)} Example
+  const typeName = (type === 'output') ? 'Response' : type
+
+  return `### ${toTitleCase(typeName)} Example
 
 \`\`\`json
 ${JSON.stringify(example, null, 2)}

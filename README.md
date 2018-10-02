@@ -7,8 +7,8 @@ Example of serverless framework + [middy](https://github.com/middyjs/middy)
 - [API Docs](#api-docs)
   * [Input Schema](#input-schema)
   * [Input Example](#input-example)
-  * [Output Schema](#output-schema)
-  * [Output Example](#output-example)
+  * [Response Schema](#response-schema)
+  * [Response Example](#response-example)
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Install
@@ -62,11 +62,11 @@ serverless deploy
 
 ```json
 {
-  "name": "ipsum aliqua sed"
+  "name": "in qui aliqua"
 }
 ```
 
-### Output Schema
+### Response Schema
 
 ```json
 {
@@ -94,12 +94,12 @@ serverless deploy
 }
 ```
 
-### Output Example
+### Response Example
 
 ```json
 {
-  "result": "id ad",
-  "message": "sit aute mollit consectetur do"
+  "result": "fugiat",
+  "message": "ullamco id tempor laborum"
 }
 ```
 <!-- AUTO-GENERATED-CONTENT:END -->
