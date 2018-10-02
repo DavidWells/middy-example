@@ -51,9 +51,13 @@ ${JSON.stringify(schema, null, 2)}
 }
 
 function renderSchemaExample(schema, type) {
-  const example = schemaFakerSync(schema)
+  let example = schemaFakerSync(schema)
   if (!example || !Object.keys(example).length) {
     return ''
+  }
+
+  if (example.body) {
+    example = example.body
   }
 
   return `### ${toTitleCase(type)} Example

@@ -62,9 +62,7 @@ serverless deploy
 
 ```json
 {
-  "body": {
-    "name": "laborum reprehenderit et"
-  }
+  "name": "ipsum aliqua sed"
 }
 ```
 
@@ -100,10 +98,8 @@ serverless deploy
 
 ```json
 {
-  "body": {
-    "result": "ut ex s",
-    "message": "in ea est dolore"
-  }
+  "result": "id ad",
+  "message": "sit aute mollit consectetur do"
 }
 ```
 <!-- AUTO-GENERATED-CONTENT:END -->
