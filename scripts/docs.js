@@ -20,8 +20,9 @@ const config = {
 
       const schemasDocs = Object.keys(schemaData).map((type) => {
         const currentSchema = schemaData[`${type}`]
-        const schemaDisplay = renderSchema(currentSchema, type)
-        const example = renderSchemaExample(currentSchema, type)
+        const schemaName = type.replace('Schema', '')
+        const schemaDisplay = renderSchema(currentSchema, schemaName)
+        const example = renderSchemaExample(currentSchema, schemaName)
         return `${schemaDisplay}${example}`
       })
 

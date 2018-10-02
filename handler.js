@@ -18,7 +18,7 @@ const businessLogic = (event, context, callback) => {
 
 /* Input & Output Schema */
 const schema = {
-  input: {
+  inputSchema: {
     type: 'object',
     properties: {
       body: {
@@ -31,7 +31,7 @@ const schema = {
     },
     required: ['body']
   },
-  output: {
+  outputSchema: {
     type: 'object',
     properties: {
       body: {
@@ -52,7 +52,7 @@ const handler = middy(businessLogic)
   // parses the request body when it's a JSON and converts it to an object
   .use(jsonBodyParser())
   // validates the input
-  .use(validator({ inputSchema: schema.input, outputSchema: schema.output }))
+  .use(validator(schema))
   // handles common http errors and returns proper responses
   .use(httpErrorHandler())
 
